@@ -124,3 +124,5 @@ Our function-level scope still keeps our methods and variables public and privat
 But this time, we avoid the risk that we can invoke our module elsewhere in the code.
 
 In other files we can now use `musicModule`'s' functionality – a well-encapsulated module in our global scope!
+
+[Source](https://gist.github.com/zcaceres/bb0eec99c02dda6aac0e041d0d4d7bf2)
