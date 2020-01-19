@@ -1,4 +1,4 @@
-# javascript-patterns
+# JavaScript Patterns
 
 ## Design Pattern
 
