@@ -1,10 +1,17 @@
-# Bubble Sort
+# Le Tri à bulles
 
 ![Bubble Sort](bubble-sort.gif)
 
+Le tri à bulles, est un algorithme de tri simple qui parcourt la liste à trier à plusieurs reprises, compare chaque paire d'éléments adjacents et les échange s'ils sont dans le mauvais ordre (ordre croissant ou décroissant). Le passage dans la liste est répété jusqu'à ce qu'aucun échange ne soit nécessaire, ce qui indique que la liste est triée.
 
-* [Bubble Sort with Do While + For loops](bubble-sort-do-while.js)
-* [Bubble Sort with nested For loops](bubble-sort-for.js)
+## Complexité
+
+| Meilleur        | Moyen           | Pire  |
+| :-------------: |:-------------:| :-------------:|
+| O(n)      | O(n2) | O(n2) |
+
+* [Tri à bulle avec une boucle Do While et For](bubble-sort-do-while.js)
+* [Tri à bulle avec deux boucle For imbriquées](bubble-sort-for.js)
 
 
 
