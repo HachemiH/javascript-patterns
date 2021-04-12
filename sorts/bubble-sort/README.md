@@ -8,7 +8,7 @@ Le tri à bulles, est un algorithme de tri simple qui parcourt la liste à trier
 
 | Meilleur        | Moyen           | Pire  |
 | :-------------: |:-------------:| :-------------:|
-| O(n)      | O(n2) | O(n2) |
+| O(n)      | O(n²) | O(n²) |
 
 * [Tri à bulle avec une boucle Do While et une For](bubble-sort-do-while.js)
 * [Tri à bulle avec deux boucles For imbriquées](bubble-sort-for.js)
