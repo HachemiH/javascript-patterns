@@ -7,4 +7,5 @@
 
 ## Algorithmes de Tri
 
-* [Bubble Sort](sorts/bubble-sort)
+* [Le tri à bulle](sorts/bubble-sort)
+* [Le tri par insertion](sorts/insertion-sort)
