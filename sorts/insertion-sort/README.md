@@ -11,7 +11,7 @@
 | :-------------: |:-------------:| :-------------:|
 | O(n)      | O(n²) | O(n²) |
 
-* [Tri par insertion avec une boucle For]()
+* [Tri par insertion avec une boucle For](insertion-sort-for.js)
 
 
 
