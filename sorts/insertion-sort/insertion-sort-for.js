@@ -1,8 +1,8 @@
 const arr = [3, 45, 67, 98, 78, 25, 17];
 
+
 function insertionSort(inputArr) {
-    let n = inputArr.length;
-        for (let i = 1; i < n; i++) {
+        for (let i = 1; i < inputArr.length; i++) {
             // Choosing the first element in our unsorted subarray
             let current = inputArr[i];
             // The last element of our sorted subarray
