@@ -9,7 +9,7 @@
 
 | Meilleur        | Moyen           | Pire  |
 | :-------------: |:-------------:| :-------------:|
-| O(n)      | O(n2) | O(n2) |
+| O(1)      | O(1) | O(1) |
 
 * [Tri par insertion avec une boucle For]()
 
