@@ -1,11 +1,11 @@
 # The Revealing Module Pattern in Javascript
 > Zach Caceres
 
-Javascript does not have the typical 'private' and 'public' specifiers of more traditional object oriented languages like C# or Java. However, you can achieve the same effect through the clever application of Javascript's function-level scoping. The Revealing Module pattern is a design pattern for Javascript applications that elegantly solves this problem.
+Javascript ne dispose pas des spécificateurs "private" et "public" typiques des langages orientés objet plus traditionnels comme C# ou Java. Cependant, il est possible d'obtenir le même effet grâce à une application intelligente de la portée au niveau des fonctions de Javascript. Le modèle "Revealing Module" est un modèle de conception pour les applications Javascript qui résout élégamment ce problème.
 
-The central principle of the Revealing Module pattern is that all functionality and variables should be hidden *unless deliberately exposed*.
+Le principe central du modèle Revealing Module est que toutes les fonctionnalités et les variables doivent être cachées, *sauf si elles sont délibérément exposées*.
 
-Let's imagine we have a music application where a musicPlayer.js file handles much of our user's experience. We need to access some methods, but shouldn't be able to mess with other methods or variables.
+Imaginons que nous ayons une application musicale où un fichier musicPlayer.js gère une grande partie de l'expérience utilisateur. Nous avons besoin d'accéder à certaines méthodes, mais nous ne devons pas être en mesure d'intervenir sur d'autres méthodes ou variables.
 
 #### Using Function Scope to Create Public and Private Methods
 
