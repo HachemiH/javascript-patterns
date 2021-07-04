@@ -7,20 +7,20 @@ Le principe central du modèle Revealing Module est que toutes les fonctionnalit
 
 Imaginons que nous ayons une application musicale où un fichier musicPlayer.js gère une grande partie de l'expérience utilisateur. Nous avons besoin d'accéder à certaines méthodes, mais nous ne devons pas être en mesure d'intervenir sur d'autres méthodes ou variables.
 
-#### Using Function Scope to Create Public and Private Methods
+#### Utilisation de la portée de la fonction pour créer des méthodes publiques et privées
 
-Let's first see how Javascript's function-level scope can help us create public and private methods.
+Voyons d'abord comment la portée au niveau des fonctions de Javascript peut nous aider à créer des méthodes publiques et privées.
 
-We can move all functionality inside a function's scope. Then we return an object with the functions that we'd like accessible in other files.
+Nous pouvons déplacer toutes les fonctionnalités à l'intérieur de la portée d'une fonction. Ensuite, nous retournons un objet avec les fonctions que nous voudrions accessibles dans d'autres fichiers.
 
 ```js
 // musicPlayerModule.js
 
 var musicPlayer = function () {
-  // Let's make sure no one can directly access our songList
+  // Assurons-nous que personne ne puisse accéder directement à notre songList
   var songList = ['California Girls', 'California Dreaming', 'Hotel California'];  
 
-  // We'll expose all these functions to the user
+  // Nous allons exposer toutes ces fonctions à l'utilisateur
   function play () {
     console.log('Im playing the next song!');
   }
@@ -38,7 +38,7 @@ var musicPlayer = function () {
     console.log('My next track is', songList[0]);
   }
 
-  // Let's hide this function
+  // Cachons cette fonction
   function loadSong() {
     filesystem.loadNextSong();
   }
@@ -51,12 +51,12 @@ var musicPlayer = function () {
   }
 }
 
-const musicModule = musicPlayer(); // invoke our musicPlayer to return it's object (module)
+const musicModule = musicPlayer(); // invoquer notre musicPlayer pour renvoyer son objet (module)
 musicModule.playMusic(); // 'Im playing the next song!'
 musicModule.pauseMusic(); // 'I'm paused!'
 musicModule.showNextTrack(); // 'The next track is California Girls'
 
-// Things we can't access...
+// Des choses auxquelles nous n'avons pas accès...
 musicModule.loadSong(); // error: not a function
 musicModule.songList.push('White Rabbit'); // undefined error
 ```
