@@ -61,13 +61,13 @@ musicModule.loadSong(); // error: not a function
 musicModule.songList.push('White Rabbit'); // undefined error
 ```
 
-Now we can access all the methods that we need on our `musicModule` object. But we can't fiddle with our `songList` or access the `loadSong()` method. These are both private.
+Maintenant, nous pouvons accéder à toutes les méthodes dont nous avons besoin sur notre objet `music Module`. Mais nous ne pouvons pas jouer avec notre `songList` ou accéder à la méthode `loadSong()`. Elles sont toutes deux privées.
 
-This works fine. But there's one big problem.
+Cela fonctionne bien. Mais il y a un gros problème.
 
-We're using `musicPlayer` as a namespace to hold our functions. But wait, our `musicPlayer` is a function that's still exposed to the global scope!
+Nous utilisons `musicPlayer` comme espace de noms pour contenir nos fonctions. Mais attendez, notre `musicPlayer` est une fonction qui est toujours exposée à la portée globale !
 
-Someone could come along and invoke it again, creating a new `musicPlayer`. Then we would have multiple instances of `musicPlayer` floating around, polluting our environment and causing all sorts of confusion.
+Quelqu'un pourrait venir et l'invoquer à nouveau, créant un nouveau `musicPlayer`. Ensuite, nous aurions plusieurs instances de `musicPlayer` flottantes, polluant notre environnement et provoquant toutes sortes de confusions.
 
 #### Hiding Your Module with an IIFE
 The best way to avoid exposing your top-level function to the global scope is to wrap everything in an IFFE. An IIFE is an *immediately-invoked function expression*. That's a mouthful. It just means that we call (invoke) this function as soon as the file is run (immediately).
