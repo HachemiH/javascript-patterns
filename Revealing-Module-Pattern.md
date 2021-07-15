@@ -69,19 +69,20 @@ Nous utilisons `musicPlayer` comme espace de noms pour contenir nos fonctions. M
 
 Quelqu'un pourrait venir et l'invoquer à nouveau, créant un nouveau `musicPlayer`. Ensuite, nous aurions plusieurs instances de `musicPlayer` flottantes, polluant notre environnement et provoquant toutes sortes de confusions.
 
-#### Hiding Your Module with an IIFE
-The best way to avoid exposing your top-level function to the global scope is to wrap everything in an IFFE. An IIFE is an *immediately-invoked function expression*. That's a mouthful. It just means that we call (invoke) this function as soon as the file is run (immediately).
+#### Cacher votre module avec une IIFE
 
-Since our function has no name, we call it an expression. Since it has no name, it can never be invoked elsewhere.
+La meilleure façon d'éviter d'exposer votre fonction de niveau supérieur à la portée globale est de tout envelopper dans une IFFE. Une IIFE est une *fonction expression invoquée immédiatement*. Cela signifie simplement que nous appelons (invoquons) cette fonction dès que le fichier est exécuté (c’est à dire immédiatement).
 
-Here's how that looks:
+Puisque notre fonction n'a pas de nom, nous l'appelons une expression. Comme elle n'a pas de nom, elle ne peut jamais être invoquée ailleurs.
+
+Voici à quoi cela ressemble :
 
 ```js
 var musicModule = (function () {
-  // Let's make sure no one can directly access our songList
+  // Assurons-nous que personne ne puisse accéder directement à notre songList
   var songList = ['California Girls', 'California Dreaming', 'Hotel California'];  
 
-  // We'll expose all these functions to the user
+  // Nous allons exposer toutes ces fonctions à l'utilisateur
   function play () {
     console.log('Im playing the next song!');
   }
@@ -99,7 +100,7 @@ var musicModule = (function () {
     console.log('My next track is', songList[0]);
   }
 
-  // Let's hide this function
+  // Cachons cette fonction
   function loadSong() {
     filesystem.loadNextSong();
   }
@@ -110,7 +111,7 @@ var musicModule = (function () {
     showUpNext: showNextTrack,
     addTrack: addTrackToMusicQueue
   }
-})(); // our IIFE function (surrounded with parens) is invoked here
+})(); // notre fonction IIFE (entourée de parenthèses) est invoquée ici
 
 musicModule.playMusic(); // 'Im playing the next song!'
 musicModule.pauseMusic(); // 'I'm paused!'
@@ -119,10 +120,11 @@ musicModule.loadSong(); // error: not a function
 musicModule.songList.push('White Rabbit'); // undefined
 ```
 
-Our function-level scope still keeps our methods and variables public and private based on whether we expose them in the return object.
+Notre portée au niveau de la fonction garde toujours nos méthodes et variables publiques et privées selon que nous les exposons ou non dans l'objet de retour.
 
-But this time, we avoid the risk that we can invoke our module elsewhere in the code.
+Mais cette fois, on évite le risque d'invoquer notre module ailleurs dans le code.
 
-In other files we can now use `musicModule`'s' functionality – a well-encapsulated module in our global scope!
+Dans d'autres fichiers, nous pouvons maintenant utiliser la fonctionnalité `musicModule` – un module bien encapsulé dans notre portée globale !
+
 
 [Source](https://gist.github.com/zcaceres/bb0eec99c02dda6aac0e041d0d4d7bf2)
