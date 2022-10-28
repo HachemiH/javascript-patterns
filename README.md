@@ -9,3 +9,6 @@
 
 * [Le tri à bulle](sorts/bubble-sort)
 * [Le tri par insertion](sorts/insertion-sort)
+* Le tri par selection (selection-sort)
+* Le tri fusion (merge-sort)
+* Le tri rapide (quick-sort)
